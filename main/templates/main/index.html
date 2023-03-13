@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>
+        {{ title }}
+    </h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus luctus nibh, vel volutpat felis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+
+    <button class="btn btn-warning">
+        <a href="{% url 'about' %}">На страницу про нас</a>
+    </button>
+
+    {% for el in values %}
+        {% if el == 'Hello' %}
+                <p>{{ el|upper }}</p>
+        {% endif %}
+    {% endfor %}
+
+    {% for el in obj %}
+        <p>{{ el }}</p>
+    {% endfor %}
+
+</div>
+{% endblock %}
